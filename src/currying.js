@@ -66,3 +66,7 @@ console.log(added);
 //Removing element from array
 const remove = numbers.filter((n) => n !== 2);
 console.log(remove);
+
+//Updating element in an array
+const updatedArray = numbers.map((n) => (n === 2 ? 20 : n));
+console.log(updatedArray);
