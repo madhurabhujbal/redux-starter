@@ -62,3 +62,7 @@ const numbers = [1, 2, 3];
 const index = numbers.indexOf(2); //adding element at a specific position in an array
 const added = [...numbers.slice(0, index), 4, ...numbers.slice(index)];
 console.log(added);
+
+//Removing element from array
+const remove = numbers.filter((n) => n !== 2);
+console.log(remove);
