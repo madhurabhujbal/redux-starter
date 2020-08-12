@@ -8,16 +8,16 @@ add2 = add(2);
 add10 = add(10);
 add100 = add(100);
 
-console.log(add2);
-console.log(add10);
-console.log(add100);
+// console.log(add2);
+// console.log(add10);
+// console.log(add100);
 
 res2 = add2(3);
-console.log(res2);
+// console.log(res2);
 res2 = add10(3);
-console.log(res2);
+// console.log(res2);
 res2 = add100(3);
-console.log(res2);
+// console.log(res2);
 
 function wrap(type) {
   return function (str) {
@@ -30,13 +30,13 @@ wrapSpan = wrap("span");
 
 val = "javascript";
 
-console.log(wrapDiv(val));
-console.log(wrapSpan(val));
+// console.log(wrapDiv(val));
+// console.log(wrapSpan(val));
 
 //Updating an object by Object.assign method
 const person = { name: "John" };
 const updated = Object.assign({}, person, { name: "Bob", age: 30 }); // copy person object in empty object and add name and age properties in new object.
-console.log(updated);
+// console.log(updated);
 
 //Updating an object by spread operator
 const man = {
@@ -52,4 +52,10 @@ const manupdt = {
   age: 30,
   address: { ...person.address, city: "New York" },
 }; // copy man object with all its properties and add name and age properties in new object.
-console.log(man);
+//console.log(man);
+
+//Immutability with arrays:
+const numbers = [1, 2, 3];
+//Adding element in array
+const added = [...numbers, 4]; //adding element at end of array
+console.log(added);
