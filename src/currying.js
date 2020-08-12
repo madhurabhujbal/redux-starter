@@ -57,5 +57,6 @@ const manupdt = {
 //Immutability with arrays:
 const numbers = [1, 2, 3];
 //Adding element in array
-const added = [...numbers, 4]; //adding element at end of array
+// const added = [...numbers, 4]; //adding element at end of array
+const added = [4, ...numbers]; //adding element at beginning of array
 console.log(added);
