@@ -9,4 +9,4 @@ let book = Map({ title: "Harry Potter" });
 // }
 
 //publish(book);
-console.log(book);
+console.log(book.get("title")); //we cannot access book object properties by book.title. We have to use get().
