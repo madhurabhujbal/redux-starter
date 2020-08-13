@@ -1,10 +1,12 @@
 //Example of immutable.js library
 
-let book = { title: "Harry Potter" };
+import { Map } from "immutable";
 
-function publish(book) {
-  book.isPublished = true;
-}
+let book = Map({ title: "Harry Potter" });
+
+// function publish(book) {
+//   book.isPublished = true;
+// }
 
 publish(book);
 console.log(book);
