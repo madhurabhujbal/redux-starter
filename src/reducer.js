@@ -1,6 +1,7 @@
 let lastId = 0;
 
-function reducer(state, action) {
+function reducer(state = [], action) {
+  //Setting initial state to [], else when app is started and Redux calls the reducer, state is undefined.
   if (action.type === "bugAdded")
     return [
       ...state,
