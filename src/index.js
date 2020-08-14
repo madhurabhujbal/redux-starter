@@ -1,4 +1,5 @@
 import store from "./store";
+import * as actions from "./actionTypes";
 
 const unsubscribe = store.subscribe(() => {
   //Useful for refreshing/rerendering UI when app state changes.
@@ -6,7 +7,7 @@ const unsubscribe = store.subscribe(() => {
 });
 
 store.dispatch({
-  type: "bugAdded",
+  type: actions.BUG_ADDED,
   payload: {
     description: "Bug1",
   },
@@ -14,7 +15,7 @@ store.dispatch({
 
 unsubscribe(); //Useful when component is no longer in the app and we do not want notifications from store anymore.
 store.dispatch({
-  type: "bugRemoved",
+  type: actions.BUG_REMOVED,
   payload: {
     id: 1,
   },
