@@ -1,6 +1,6 @@
 import store from "./store";
 
-store.subscribe(() => {
+const unsubscribe = store.subscribe(() => {
   //Useful for refreshing/rerendering UI when app state changes.
   console.log("Store changed!", store.getState());
 });
@@ -12,6 +12,7 @@ store.dispatch({
   },
 });
 
+unsubscribe(); //Useful when component is no longer in the app and we do not want notifications from store anymore.
 store.dispatch({
   type: "bugRemoved",
   payload: {
