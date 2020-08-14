@@ -2,6 +2,7 @@ import store from "./store";
 import * as actions from "./actionTypes";
 
 const unsubscribe = store.subscribe(() => {
+  //subscribe method returns a function to unsubscribe from the store
   //Useful for refreshing/rerendering UI when app state changes.
   console.log("Store changed!", store.getState());
 });
