@@ -7,12 +7,7 @@ const unsubscribe = store.subscribe(() => {
   console.log("Store changed!", store.getState());
 });
 
-store.dispatch({
-  type: actions.BUG_ADDED,
-  payload: {
-    description: "Bug1",
-  },
-});
+store.dispatch();
 
 unsubscribe(); //Useful when component is no longer in the app and we do not want notifications from store anymore.
 store.dispatch({
