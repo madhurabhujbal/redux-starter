@@ -3,7 +3,14 @@ import * as actions from "./actionTypes"; //required only when creating an actio
 export const bugAdded = (description) => ({
   type: actions.BUG_ADDED,
   payload: {
-    description: "Bug1",
+    description,
+  },
+});
+
+export const bugResolved = (id) => ({
+  type: actions.BUG_RESOLVED,
+  payload: {
+    id,
   },
 });
 

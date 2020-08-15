@@ -1,5 +1,5 @@
 import store from "./store";
-import { bugAdded } from "./actionCreators";
+import { bugAdded, bugResolved } from "./actionCreators";
 
 const unsubscribe = store.subscribe(() => {
   //subscribe method returns a function to unsubscribe from the store
@@ -8,12 +8,13 @@ const unsubscribe = store.subscribe(() => {
 });
 
 store.dispatch(bugAdded("Bug 1"));
+store.dispatch(bugResolved(1));
 
-unsubscribe(); //Useful when component is no longer in the app and we do not want notifications from store anymore.
-store.dispatch({
-  type: actions.BUG_REMOVED,
-  payload: {
-    id: 1,
-  },
-});
-console.log(store.getState());
+// unsubscribe(); //Useful when component is no longer in the app and we do not want notifications from store anymore.
+// store.dispatch({
+//   type: actions.BUG_REMOVED,
+//   payload: {
+//     id: 1,
+//   },
+// });
+// console.log(store.getState());
