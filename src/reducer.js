@@ -1,9 +1,12 @@
+//import { BUG_ADDED, BUG_REMOVED } from "./actionTypes";
+import * as actions from "./actionTypes";
+
 let lastId = 0;
 
-function reducer(state = [], action) {
+export default function reducer(state = [], action) {
   //Setting initial state to [], else when app is started and Redux calls the reducer, state is undefined.
   switch (action.type) {
-    case "bugAdded":
+    case actions.BUG_ADDED:
       return [
         ...state,
         {
@@ -13,8 +16,13 @@ function reducer(state = [], action) {
         },
       ];
 
-    case "bugRemoved":
+    case actions.BUG_REMOVED:
       return state.filter((bug) => bug.id !== action.payload.id);
+
+    case actions.BUG_RESOLVED:
+      return state.map((bug) =>
+        bug.id !== action.payload.id ? bug : { ...bug, resolved: true }
+      );
 
     default:
       return state;
